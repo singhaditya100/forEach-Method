@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forEach Method</title>
+</head>
+<style>
+
+
+
+    body{
+        background-color: rgb(182, 212, 240);
+    }
+
+
+    #container{
+        height: auto;
+        width: 100%;
+        border: 2px solid black;
+        border-radius: 20px ;
+        grid-template-columns: auto auto auto auto; 
+        color: rgb(5, 3, 3);  
+        background-color: rgb(117, 192, 206);
+        font-style: italic;
+        gap: 20px;
+        
+
+    }
+
+
+
+
+    button {
+        height: 60px;
+        width: 10%;
+        background-color: rgb(109, 182, 224);
+
+
+
+    }
+
+    button:hover{
+        background-color: rgb(34, 152, 225);
+    }
+
+    .cart {
+        height: auto;
+        width: auto;
+        margin: 10%;
+        border: 2px solid black;
+        box-shadow: 10px 10px rgb(10, 136, 177) ;
+    }
+ 
+
+   
+
+    
+    
+</style>
+
+<body><center><h2>Employes Data</h2></center><center><button onclick="getdata(empinfo)">Show Record</button><br><br></center>
+    
+   
+ <div id="container"></div>
+
+
+   
+
+    <script>
+        const empinfo = [
+            { id:1, name:"xyz", salary:25000, designation:"IT" },
+            { id:2, name:"A", salary:2000, designation:"CS" },
+            { id:3, name:"B", salary:5000, designation:"IT" },
+            { id:4, name:"C", salary:8000, designation:"CS" },
+            { id:5, name:"D", salary:1000, designation:"IT" },
+            { id:6, name:"E", salary:9000, designation:"CS" },
+            { id:7, name:"Z", salary:75000, designation:"IT" }
+
+
+        ]
+
+
+
+
+
+        function data(info) {
+            const data = document.getElementsByClassName("container");
+            info.slice(0, 4).array.forEach(e => {
+                const div = document.createElement("div");
+                div.setAttribute("class", "cart")     //setAttribute
+                div.innerHTML = `<p>${e.name}</p> <p>${e.salary}</p>  <p>${e.id}</p>`
+                cart.appendChild(div)
+            })
+        };
+
+        let flag = 0; //gloabal variable
+
+        function getdata(empinfo) {
+            if (flag === 0) {
+
+                let card = document.getElementById("container")
+                card.style.display="grid"
+
+                empinfo.forEach( e => {
+
+                    const div = document.createElement("div");
+                    div.setAttribute("class", "cart")  ;
+                       //setAttribute
+                    div.innerHTML = `<p> <strong>EmployeName</strong> = ${e.name}</p> <p>  <strong>Salary</strong> =  ${e.salary}</p>  <p> <strong>EmpID</strong> = ${e.id}</p>`;
+                    card.appendChild(div) 
+
+
+                });
+                flag = 1;
+
+            }
+
+            
+            else {
+
+
+               let card = document.getElementById("container");
+               card.innerHTML =""
+
+                flag = 0;
+
+
+
+            }
+
+        }
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
